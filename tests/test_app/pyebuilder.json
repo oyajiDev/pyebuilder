@@ -1,0 +1,9 @@
+{
+    "name": "test_app",
+    "version": "0.0.1",
+    "description": "",
+    "entry": "main.py",
+    "excludes": [
+        "build.py"
+    ]
+}

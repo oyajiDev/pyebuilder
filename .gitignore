@@ -1,0 +1,15 @@
+# syncthing files
+.stfolder
+.stignore
+
+# vscode setting files
+.vscode
+
+# unnecessary files
+env
+*.egg*
+build
+.build
+dist
+dev_scripts
+requirements.dev.txt
