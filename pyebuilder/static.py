@@ -103,11 +103,11 @@ def package_json(name:str, version:str = "0.0.1", description:str = "", author:s
             },
             "asar": True,
             "asarUnpack": [
-                "node_modules",
+                # "node_modules",
                 "python",
                 "scripts",
-                "index.js",
-                "package.json"
+                # "index.js",
+                # "package.json"
             ]
         },
 
