@@ -4,12 +4,12 @@ from .utils import setup_node, setup_python, compile_to_pyc, clean_build_dist
 from .static import index_js, package_json
 
 
-def build(target_dir:str, dest_dir:str, build_type:str = "debug", python_version:str = f"{sys.version_info.major}.{sys.version_info.minor}", node_version = "18.12.1", icon:str = None, make_installer:bool = False):
+def build(target_dir:str, dest_dir:str, config_file:str = "pyebuilder.config.json", build_type:str = "debug", python_version:str = f"{sys.version_info.major}.{sys.version_info.minor}", node_version = "18.12.1", icon:str = None, make_installer:bool = False):
     target_dir, dest_dir = os.path.realpath(target_dir), os.path.realpath(dest_dir)
     temp_build_dir = os.path.join(target_dir, ".build")
     build_type = build_type.lower()
 
-    config_file = os.path.join(target_dir, "pyebuilder.json")
+    config_file = config_file if os.path.isabs(config_file) else os.path.join(target_dir, config_file)
     if not os.path.exists(config_file):
         raise RuntimeError("no pyebuilder config file!")
 
